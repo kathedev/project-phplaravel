@@ -35,7 +35,7 @@
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     @if (auth()->check())
-                        <li><a class="dropdown-item" href="#!">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" href="{{ route('docentes.logout') }}">Cerrar sesión</a></li>
                     @else
                         <li><a class="dropdown-item" href="{{ route('docentes.showLoginForm') }}">Iniciar sesión</a>
                         </li>
@@ -56,6 +56,14 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Docentes
                             </a>
+                            <a class="nav-link" href="{{ route('estudiantes.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Estudiantes
+                            </a>
+                            <a class="nav-link" href="{{ route('asistencias.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-check"></i></div>
+                                Asistencias
+                            </a>
                             <a class="nav-link" href="{{ route('grupos.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Grupos
@@ -63,6 +71,10 @@
                             <a class="nav-link" href="{{ route('docentes_grupos.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Docentes Grupos
+                            </a>
+                            <a class="nav-link" href="{{ route('estudiantes_grupos.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Estudiantes Grupos
                             </a>
                         @endif
                     </div>
